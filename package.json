@@ -2,11 +2,11 @@
     "name": "iframe-app",
     "version": "0.1.0",
     "private": true,
+    "type": "module",
     "scripts": {
       "dev": "next dev",
       "build": "next build",
-      "start": "next start",
-      "export": "next build && next export"
+      "start": "next start"
     },
     "dependencies": {
       "next": "latest",
