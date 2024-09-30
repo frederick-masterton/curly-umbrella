@@ -11,7 +11,7 @@ export default function Home({ defaultUrl }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>NextJS Dynamic Iframe App</title>
+        <title>NextJS Static Iframe App</title>
         <meta name="description" content="A NextJS app with a dynamic iframe" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -33,9 +33,9 @@ export default function Home({ defaultUrl }) {
   )
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
   // Default URL if none is provided
-  const defaultUrl = "https://example.com"
+  const defaultUrl = "https://google.com"
   
   return {
     props: { defaultUrl },
