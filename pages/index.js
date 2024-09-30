@@ -2,11 +2,17 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
+import { useEffect, useState } from 'react'
 
 export default function Home({ defaultUrl }) {
   const router = useRouter()
-  const { url } = router.query
-  const iframeUrl = url || defaultUrl
+  const [iframeUrl, setIframeUrl] = useState(defaultUrl)
+
+  useEffect(() => {
+    if (router.isReady) {
+      setIframeUrl(router.query.url || defaultUrl)
+    }
+  }, [router.isReady, router.query.url, defaultUrl])
 
   return (
     <div className={styles.container}>
